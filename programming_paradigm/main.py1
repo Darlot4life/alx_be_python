@@ -1,0 +1,36 @@
+def run_library():
+    # Setup a small library
+    library = Library()
+    library.add_book(Book("Brave New World", "Aldous Huxley"))
+    library.add_book(Book("1984", "George Orwell"))
+
+    # Initial list of available books
+    print("Available books after setup:")
+    library.list_available_books()
+
+    # Simulate checking out a book
+    library.check_out_book("1984")
+    print("\nAvailable books after checking out '1984':")
+    library.list_available_books()
+
+    # Simulate returning a book
+    library.return_book("1984")
+    print("\nAvailable books after returning '1984':")
+    library.list_available_books()
+
+def main():
+    if len(sys.argv) < 2:
+        print("Usage: python main.py [divide|library] <args>")
+        sys.exit(1)
+
+    command = sys.argv[1]
+
+    if command == "divide":
+        run_division_calculator()
+    elif command == "library":
+        run_library()
+    else:
+        print("Invalid command. Use 'divide' or 'library'.")
+
+if __name__ == "__main__":
+    main()
