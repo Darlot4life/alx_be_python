@@ -1,4 +1,9 @@
-def setUp(self):
+import unittest
+from simple_calculator import SimpleCalculator
+
+class TestSimpleCalculator(unittest.TestCase):
+
+    def setUp(self):
         self.calc = SimpleCalculator()
 
     def test_addition(self):
